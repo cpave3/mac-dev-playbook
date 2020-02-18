@@ -1,69 +1,58 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
-configure_sudoers: yes
-configure_terminal: yes
-configure_osx: yes
+configure_dotfiles: no
+configure_sudoers: no
+configure_terminal: no
+configure_osx: no
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
+  # - .zshrc
+  # - .gitignore
+  # - .inputrc
+  # - .osx
+  # - .vimrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
   - git
-  - go
-  - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
   - sqlite
   - mcrypt
-  - nmap
   - node
   - nvm
   - php
-  - ssh-copy-id
-  - cowsay
-  - readline
   - openssl
-  - pv
   - wget
-  - wrk
+  - tree
+  - composer
+  - neovim
+  - mysql-client@5.7
+  - dinghy
+  - docker
+  - docker-machine
+  - docker-machine-driver-xhyve
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - codekitchen/dinghy
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
-  - docker
   - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - macvim
-  - sequel-pro
-  - skitch
   - slack
-  - sublime-text
-  - transmit
-  - vagrant
+  - iterm2
+  - tableplus
+  - visual-studio-code
+  - phpstorm
+  - tunnelblick
+  - sketch
+  - spotify
+  - gitkraken
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -83,14 +72,21 @@ gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-  # - name: webpack
-  #   state: present # present/absent/latest, default: present
-  #   version: "^2.6" # default: N/A
-pip_packages: []
+npm_packages:
+  - name: yarn
+    state: latest
+  - name: bower
+    state: latest
+pip_packages:
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
+  - name: docker
+    state: present
+  - name: docker-compose
+    state: present
+  - name: PyMySQL
+    state: present
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
