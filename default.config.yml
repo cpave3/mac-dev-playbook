@@ -32,8 +32,10 @@ homebrew_installed_packages:
   - mysql-client@5.7
   - dinghy
   - docker
+  - docker-compose
   - docker-machine
   - docker-machine-driver-xhyve
+  - docker-credential-helper
 
 homebrew_taps:
   - homebrew/core
